@@ -9,7 +9,7 @@ module.exports = Franz => {
 
 
     const notification_element = document.getElementById('notifications_amount');
-    const ticket_element = document.querySelectorAll('span[data-teamleader-ui]._1AIsYww._1Tc7gxD.IelUlmv._3axem5c._35DEMDj._1jFVq0d')[0];
+    const ticket_element = document.querySelector("a[href='tickets.php'] > span");
     const call_element = document.getElementById('queue_amount');
     
     if(notification_element) {
@@ -17,7 +17,7 @@ module.exports = Franz => {
     }
 
     if(ticket_element != null) {
-      indirectNotifications = 1;
+      indirectNotifications = parseInt(ticket_element.innerHTML, 10);
     }
 
     if(call_element) {
